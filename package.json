@@ -4,6 +4,10 @@
   "license": "MIT",
   "version": "0.0.0",
   "main": "dist/msonToSchemas.js",
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com:madewithlove/mson-to-schemas.git"
+  },
   "keywords": [
     "mson",
     "json-schema",
@@ -32,6 +36,7 @@
   "scripts": {
     "build": "babel src -d dist",
     "prepublish": "npm run build",
+    "postversion": "git push; git push --tags; npm publish",
     "test": "mocha tests --recursive --compilers js:babel-core/register",
     "test:watch": "npm run test -- --watch"
   }
