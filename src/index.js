@@ -1,5 +1,4 @@
 import path from 'path';
-import fs from 'fs';
 import program from 'commander';
 import 'colors';
 import packageInformations from '../package.json';
@@ -10,14 +9,12 @@ import {ensureDirectory, getFileContents} from './helpers';
 program.version(packageInformations.version);
 
 program
-    .command('convert <input> <output>')
-    .alias('*')
+    .arguments('<input> <output>')
     .description('Convert an MSON file into JSON schemas')
     .action((file, output) => {
         output = path.resolve(output);
         ensureDirectory(output);
 
-        // Get file contents
         const contents = getFileContents(file);
         if (!contents) {
             return process.exit(1);

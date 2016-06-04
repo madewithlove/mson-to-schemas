@@ -1,11 +1,9 @@
 import fs from 'fs';
 
 export default function getFileContents(file) {
-    if (!fs.existsSync(file)) {
-        console.log('File "%s" does not exist'.red, file);
-
-        return false;
+    try {
+        return fs.readFileSync(file).toString();
+    } catch (error) {
+        console.error('File "%s" does not exist'.red, file);
     }
-
-    return fs.readFileSync(file).toString();
 }
