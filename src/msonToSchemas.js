@@ -27,7 +27,9 @@ export default function msonToSchemas(input) {
                 };
 
                 // Trim some ends
-                schema.description = schema.description.trim();
+                if (schema.description) {
+                    schema.description = schema.description.trim();
+                }
 
                 const slug = slugify(schema.title);
                 schemas[slug] = schema;
