@@ -1,7 +1,7 @@
 {
     "$schema": "http://json-schema.org/draft-04/schema#",
     "title": "Extension",
-    "description": "Defines additional properties that extend [ALPS][] elements.\n\n",
+    "description": "Defines additional properties that extend [ALPS][] elements.",
     "type": "object",
     "properties": {
         "id": {

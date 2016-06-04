@@ -1,7 +1,7 @@
 {
     "$schema": "http://json-schema.org/draft-04/schema#",
     "title": "ALPS Base",
-    "description": "Base type for select [ALPS][] elements.\n\n",
+    "description": "Base type for select [ALPS][] elements.",
     "type": "object",
     "properties": {
         "links": {

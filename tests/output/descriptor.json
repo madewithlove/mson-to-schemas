@@ -1,7 +1,7 @@
 {
     "$schema": "http://json-schema.org/draft-04/schema#",
     "title": "Descriptor",
-    "description": "Defines the semantics of specific data elements or state transitions that MAY exist in an associated representation.\n\n",
+    "description": "Defines the semantics of specific data elements or state transitions that MAY exist in an associated representation.",
     "type": "object",
     "properties": {
         "links": {

@@ -18,13 +18,16 @@ export default function msonToSchemas(input) {
             foundStructures.forEach(structure => {
                 let schema = eidolon.schema(structure, dataStructures);
 
-                // Add title to schema
+                // Add title and reorder properties
                 schema = {
                     $schema: schema.$schema,
                     title: structure.meta.id,
                     description: schema.description,
                     ...schema,
                 };
+
+                // Trim some ends
+                schema.description = schema.description.trim();
 
                 const slug = slugify(schema.title);
                 schemas[slug] = schema;

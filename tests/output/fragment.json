@@ -1,6 +1,6 @@
 {
     "$schema": "http://json-schema.org/draft-04/schema#",
     "title": "Fragment",
-    "description": "A relative [RFC3986] URI fragment with a value of the ID of a local descriptor.\n",
+    "description": "A relative [RFC3986] URI fragment with a value of the ID of a local descriptor.",
     "type": "string"
 }

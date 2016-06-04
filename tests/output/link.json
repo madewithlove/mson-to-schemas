@@ -1,7 +1,7 @@
 {
     "$schema": "http://json-schema.org/draft-04/schema#",
     "title": "Link",
-    "description": "Identifies a link between an ALPS element and some other (possibly external) resource.\n\n",
+    "description": "Identifies a link between an ALPS element and some other (possibly external) resource.",
     "type": "object",
     "properties": {
         "rel": {

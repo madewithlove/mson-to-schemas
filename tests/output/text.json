@@ -1,7 +1,7 @@
 {
     "$schema": "http://json-schema.org/draft-04/schema#",
     "title": "Text",
-    "description": "Free-form, usually human-readable, text.\n\n",
+    "description": "Free-form, usually human-readable, text.",
     "type": "object",
     "properties": {
         "format": {

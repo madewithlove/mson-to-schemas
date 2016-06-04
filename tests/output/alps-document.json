@@ -1,7 +1,7 @@
 {
     "$schema": "http://json-schema.org/draft-04/schema#",
     "title": "ALPS Document",
-    "description": "An ALPS document contains a machine-readable collection of identifying strings and their human-readable explanations.\n\n",
+    "description": "An ALPS document contains a machine-readable collection of identifying strings and their human-readable explanations.",
     "type": "object",
     "properties": {
         "links": {
