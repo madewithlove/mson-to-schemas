@@ -34,8 +34,9 @@
     "mocha": "^2.5.3"
   },
   "scripts": {
+    "prebuild": "rm -rf dist",
     "build": "babel src -d dist",
-    "prepublish": "npm run build",
+    "prepublish": "BABEL_ENV=production npm run build",
     "postversion": "git push; git push --tags; npm publish",
     "test": "mocha tests --recursive --compilers js:babel-core/register",
     "test:watch": "npm run test -- --watch"
