@@ -18,7 +18,7 @@ program
         ensureDirectory(output);
 
         const contents = getFileContents(file);
-        msonToSchemas(contents, schemas => {
+        msonToSchemas(contents).then(schemas => {
             schemasToFiles(output, schemas).forEach(file => {
                 console.log('Created %s', file.green);
             });

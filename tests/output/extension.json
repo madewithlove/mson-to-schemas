@@ -1,0 +1,23 @@
+{
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "title": "Extension",
+    "description": "Defines additional properties that extend [ALPS][] elements.\n\n",
+    "type": "object",
+    "properties": {
+        "id": {
+            "type": "string",
+            "description": "A document-wide unique identifier for the extension element."
+        },
+        "href": {
+            "type": "string",
+            "description": "References the definition of the extension."
+        },
+        "value": {
+            "type": "string",
+            "description": "Specifies the value."
+        }
+    },
+    "required": [
+        "id"
+    ]
+}

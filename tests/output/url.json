@@ -1,0 +1,6 @@
+{
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "title": "URL",
+    "description": "A resolvable [RFC3986] URL.\n\n",
+    "type": "string"
+}

@@ -1,30 +1,36 @@
 import eidolon from 'eidolon';
 import protagonist from 'protagonist';
+import {getDataStructures, slugify} from './helpers';
 
-function getDataStructures(result) {
-    while (true) {
-        if (result.content[0].element === 'dataStructure') {
-            return result.content.map(entry => entry.content[0]);
-        }
-
-        result = result.content[0];
-    }
-}
-
-export default function msonToSchemas(input, callback) {
-    protagonist.parse(input, (errors, result) => {
-        let schemas = {};
-        getDataStructures(result).forEach(structure => {
-            const schema = eidolon.schema(structure, {});
-
-            // Append schema title
-            const name = structure.meta.id;
-            const slug = name.replace(' ', '-').toLowerCase();
-            schema.title = name;
-
-            schemas[slug] = schema;
+export default function msonToSchemas(input) {
+    return new Promise(resolve => {
+        protagonist.parse(input, (errors, result) => {
+            const foundStructures = getDataStructures(result);
+    
+            // Do a first pass to gather all data structures
+            let dataStructures = {};
+            foundStructures.forEach(structure => {
+                dataStructures[structure.meta.id] = structure;
+            });
+    
+            // Then convert all to JSON schemas
+            let schemas = {};
+            foundStructures.forEach(structure => {
+                let schema = eidolon.schema(structure, dataStructures);
+    
+                // Add title to schema
+                schema = {
+                    $schema: schema.$schema,
+                    title: structure.meta.id,
+                    description: schema.description,
+                    ...schema,
+                };
+    
+                const slug = slugify(schema.title);
+                schemas[slug] = schema;
+            });
+    
+            resolve(schemas);
         });
-
-        callback(schemas);
     });
 }

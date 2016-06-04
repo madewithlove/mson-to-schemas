@@ -1,23 +1,22 @@
 import fs from 'fs';
-import expect from 'expect';
+import path from 'path';
+import assert from 'assert';
 import msonToSchemas from '../src/msonToSchemas';
 
 describe('msonToSchemas', () => {
-    it(`can convert MSON to JSON schemas`, (done) => {
-        const inputPath = `${__dirname}/input.apib`;
+    const files = fs.readdirSync(path.resolve('tests/output'));
+    const inputPath = `${__dirname}/input.apib`;
+    const input = fs.readFileSync(inputPath).toString();
+    const schemas = msonToSchemas(input);
 
-        // Get expected input and output
-        const input = fs.readFileSync(inputPath).toString();
+    files.forEach(file => {
+        it(`can convert MSON to JSON schemas - ${file}`, () => {
+            return schemas.then(output => {
+                const actual = output[file.replace('.json', '')];
+                const expected = require(path.resolve(`tests/output/${file}`));
 
-        msonToSchemas(input, output => {
-            Object.keys(output).forEach(key => {
-                const outputPath = `${__dirname}/output/${key}.json`;
-                const expected = require(outputPath);
-
-                expect(output[key]).toEqual(expected);
+                assert.deepEqual(actual, expected);
             });
-
-            done();
         });
     });
 });
