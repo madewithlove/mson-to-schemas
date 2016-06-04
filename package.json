@@ -3,7 +3,7 @@
   "description": "Convert an MSON file to JSON schemas",
   "license": "MIT",
   "version": "0.0.0",
-  "main": "index.js",
+  "main": "dist/msonToSchemas.js",
   "keywords": [
     "mson",
     "json-schema",
@@ -14,7 +14,7 @@
     "email": "heroes@madewithlove.be"
   },
   "bin": {
-    "mson2schema": "index.js"
+    "mson2schema": "dist/index.js"
   },
   "dependencies": {
     "colors": "^1.1.2",
