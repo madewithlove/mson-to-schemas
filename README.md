@@ -1,5 +1,7 @@
 # mson-to-schemas
 
+[![Build Status](https://travis-ci.org/madewithlove/mson-to-schemas.svg?branch=master)](https://travis-ci.org/madewithlove/mson-to-schemas)
+
 This is a package made to accept the path to an APIB files containing data structures, and convert those to a folder of JSON schemas.
 
 ## Installation
