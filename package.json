@@ -40,6 +40,7 @@
     "prepublish": "BABEL_ENV=production npm run build",
     "postversion": "git push; git push --tags; npm publish",
     "test": "mocha tests --recursive --no-timeouts --compilers js:babel-core/register",
-    "test:watch": "npm run test -- --watch"
+    "test:watch": "npm run test -- --watch",
+    "lint": "eslint src"
   }
 }
