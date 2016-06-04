@@ -1,4 +1,4 @@
-# msonToSchemas
+# mson-to-schemas
 
 This is a package made to accept the path to an APIB files containing data structures, and convert those to a folder of JSON schemas.
 
