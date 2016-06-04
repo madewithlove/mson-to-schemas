@@ -1,5 +1,5 @@
 {
-  "name": "mson-to-schema",
+  "name": "mson-to-schemas",
   "description": "Convert an MSON file to JSON schemas",
   "license": "MIT",
   "version": "0.0.0",
@@ -14,7 +14,7 @@
     "email": "heroes@madewithlove.be"
   },
   "bin": {
-    "mson2schema": "bin/mson2schema.js"
+    "mson2schemas": "bin/index.js"
   },
   "dependencies": {
     "colors": "^1.1.2",
