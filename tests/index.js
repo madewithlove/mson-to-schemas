@@ -1,8 +1,8 @@
 import fs from 'fs';
 import expect from 'expect';
-import msonToSchema from '../src/msonToSchema';
+import msonToSchemas from '../src/msonToSchemas';
 
-describe('mocha-to-schema', () => {
+describe('msonToSchemas', () => {
     const files = fs.readdirSync(__dirname + '/input');
 
     files.forEach(file => {
@@ -14,8 +14,8 @@ describe('mocha-to-schema', () => {
             const input = fs.readFileSync(inputPath).toString();
             let expected = require(outputPath);
 
-            msonToSchema(input, output => {
-                expect(output).toEqual(expected);
+            msonToSchemas(input, output => {
+                expect(output.album).toEqual(expected);
                 done();
             });
         });

@@ -2,12 +2,19 @@
   "$schema": "http://json-schema.org/draft-04/schema#",
   "title": "Album",
   "type": "object",
+  "required": ["name"],
   "properties": {
     "id": {
       "type": "number"
     },
     "name": {
       "type": "string"
+    },
+    "type": {
+      "enum": ["foo", "bar"]
+    },
+    "read": {
+      "type": "boolean"
     }
   }
 }
