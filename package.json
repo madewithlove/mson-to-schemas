@@ -30,6 +30,8 @@
     "babel-cli": "^6.9.0",
     "babel-preset-es2015": "^6.9.0",
     "babel-preset-stage-0": "^6.5.0",
+    "eslint": "^2.11.1",
+    "eslint-config-madewithlove": "^3.3.1",
     "mocha": "^2.5.3"
   },
   "scripts": {

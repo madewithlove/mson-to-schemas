@@ -19,8 +19,8 @@ program
 
         const contents = getFileContents(file);
         msonToSchemas(contents).then(schemas => {
-            schemasToFiles(output, schemas).forEach(file => {
-                console.log('Created %s', file.green);
+            return schemasToFiles(output, schemas).forEach(schema => {
+                console.log('Created %s', schema.green);
             });
         });
     });

@@ -1,0 +1,11 @@
+{
+  "extends": "madewithlove",
+  "rules": {
+    "import/no-unresolved": 0,
+    "no-console": 0,
+    "no-constant-condition": 0,
+    "no-magic-numbers": 0,
+    "no-sync": 0,
+    "promise/catch-or-return": 0
+  }
+}
