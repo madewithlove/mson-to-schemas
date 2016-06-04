@@ -37,6 +37,7 @@
   "scripts": {
     "prebuild": "rm -rf dist",
     "build": "babel src -d dist",
+    "build:watch": "npm run build -- --watch",
     "prepublish": "BABEL_ENV=production npm run build",
     "postversion": "git push; git push --tags; npm publish",
     "test": "mocha tests --recursive --no-timeouts --compilers js:babel-core/register",
