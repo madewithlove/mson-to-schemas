@@ -2,14 +2,13 @@ import eidolon from 'eidolon';
 import protagonist from 'protagonist';
 
 function getDataStructures(result) {
-    let element, structures;
-    do {
-        element = result.element;
-        structures = result.content;
-        result = result.content[0];
-    } while (element !== 'dataStructure');
+    while (true) {
+        if (result.content[0].element === 'dataStructure') {
+            return result.content.map(entry => entry.content[0]);
+        }
 
-    return structures;
+        result = result.content[0];
+    }
 }
 
 export default function msonToSchemas(input, callback) {
@@ -17,10 +16,13 @@ export default function msonToSchemas(input, callback) {
         let schemas = {};
         getDataStructures(result).forEach(structure => {
             const schema = eidolon.schema(structure, {});
+
+            // Append schema title
             const name = structure.meta.id;
+            const slug = name.replace(' ', '-').toLowerCase();
             schema.title = name;
 
-            schemas[name.toLowerCase()] = schema;
+            schemas[slug] = schema;
         });
 
         callback(schemas);

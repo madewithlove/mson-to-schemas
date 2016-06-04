@@ -3,21 +3,21 @@ import expect from 'expect';
 import msonToSchemas from '../src/msonToSchemas';
 
 describe('msonToSchemas', () => {
-    const files = fs.readdirSync(__dirname + '/input');
+    it(`can convert MSON to JSON schemas`, (done) => {
+        const inputPath = `${__dirname}/input.apib`;
 
-    files.forEach(file => {
-        it(`can convert MSON to JSON schemas (${file})`, (done) => {
-            const inputPath = `${__dirname}/input/${file}`;
-            const outputPath = `${__dirname}/output/${file.replace('apib', 'json')}`;
+        // Get expected input and output
+        const input = fs.readFileSync(inputPath).toString();
 
-            // Get expected input and output
-            const input = fs.readFileSync(inputPath).toString();
-            let expected = require(outputPath);
+        msonToSchemas(input, output => {
+            Object.keys(output).forEach(key => {
+                const outputPath = `${__dirname}/output/${key}.json`;
+                const expected = require(outputPath);
 
-            msonToSchemas(input, output => {
-                expect(output.album).toEqual(expected);
-                done();
+                expect(output[key]).toEqual(expected);
             });
+
+            done();
         });
     });
 });

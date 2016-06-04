@@ -1,5 +1,5 @@
 {
-  "name": "mson-toschema",
+  "name": "mson-to-schema",
   "description": "Convert an MSON file to JSON schemas",
   "license": "MIT",
   "version": "0.0.0",
@@ -14,7 +14,7 @@
     "email": "heroes@madewithlove.be"
   },
   "bin": {
-    "mson2schema": "dist/index.js"
+    "mson2schema": "bin/mson2schema.js"
   },
   "dependencies": {
     "colors": "^1.1.2",
@@ -31,6 +31,7 @@
   },
   "scripts": {
     "build": "babel src -d dist",
+    "prepublish": "npm run build",
     "test": "mocha tests --recursive --compilers js:babel-core/register",
     "test:watch": "npm run test -- --watch"
   }

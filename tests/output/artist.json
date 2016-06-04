@@ -1,6 +1,6 @@
 {
   "$schema": "http://json-schema.org/draft-04/schema#",
-  "title": "Album",
+  "title": "Artist",
   "type": "object",
   "required": ["name"],
   "properties": {
@@ -9,12 +9,6 @@
     },
     "name": {
       "type": "string"
-    },
-    "type": {
-      "enum": ["foo", "bar"]
-    },
-    "read": {
-      "type": "boolean"
     }
   }
 }
