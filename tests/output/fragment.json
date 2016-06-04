@@ -1,6 +1,6 @@
 {
     "$schema": "http://json-schema.org/draft-04/schema#",
     "title": "Fragment",
-    "description": "A relative [RFC3986] URI fragment with a value of the ID of a local descriptor.\n\n[ALPS]: http://tools.ietf.org/html/draft-amundsen-richardson-foster-alps-00\n[MSON]: ../MSON%20Specification.md\n[RFC5988]: https://tools.ietf.org/html/rfc5988\n[RFC3986]: http://tools.ietf.org/html/rfc3986\n\n[ALPS Base]: #alps-base\n[Link]: #link\n[Descriptor]: #descriptor-alps-base\n[Text]: #text\n[Extension]: #extension\n[URL]: #url-string\n[Fragment]: #fragment-string\n",
+    "description": "A relative [RFC3986] URI fragment with a value of the ID of a local descriptor.\n",
     "type": "string"
 }
