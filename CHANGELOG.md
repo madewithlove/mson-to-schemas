@@ -1,5 +1,9 @@
 # CHANGELOG
 
+## 0.3.0
+### Changed
+- Changed binary name to `mson-to-schemas` to match package's name
+
 ## 0.2.0
 ### Added
 - Added `--only` option to only export certain schemas

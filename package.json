@@ -18,7 +18,7 @@
     "email": "heroes@madewithlove.be"
   },
   "bin": {
-    "mson2schemas": "bin/index.js"
+    "mson-to-schemas": "bin/index.js"
   },
   "dependencies": {
     "colors": "^1.1.2",
