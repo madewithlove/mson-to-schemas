@@ -2,7 +2,7 @@
   "name": "mson-to-schemas",
   "description": "Convert an MSON file to JSON schemas",
   "license": "MIT",
-  "version": "0.2.0",
+  "version": "0.3.0",
   "main": "dist/msonToSchemas.js",
   "repository": {
     "type": "git",
