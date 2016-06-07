@@ -1,5 +1,9 @@
 # CHANGELOG
 
+## 0.2.0
+### Added
+- Added `--only` option to only export certain schemas
+
 ## 0.1.2
 ### Fixed
 - Fixed for schemas without descriptions
