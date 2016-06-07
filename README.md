@@ -13,7 +13,7 @@ $ npm install mson-to-schemas
 ## Usage
 
 ```shell
-$ mson2schemas path/to/file.apib output-folder [--only some-structure,some-other-structure]
+$ mson-to-schemas path/to/file.apib output-folder [--only some-structure,some-other-structure]
 ```
 
 ## Testing
