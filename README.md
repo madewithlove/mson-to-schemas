@@ -13,5 +13,12 @@ $ npm install mson-to-schemas
 ## Usage
 
 ```shell
-$ mson2schemas path/to/file.apib output-folder
+$ mson2schemas path/to/file.apib output-folder [--only some-structure,some-other-structure]
+```
+
+## Testing
+
+```shell
+$ npm test
+$ npm run lint
 ```
